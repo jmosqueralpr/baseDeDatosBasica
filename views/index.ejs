@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas App</title>
+</head>
+<body>
+    <h1>Notas</h1>
+    <ul>
+        <% notas.forEach(nota => { %>
+            <li>
+                <strong><%= nota.titulo %></strong>
+                <p><%= nota.contenido %></p>
+                <p>Día: <%= nota.dia %></p>
+                <p>Horario: <%= nota.horario %></p>
+                <a href="/editar/<%= nota.id %>">Editar</a>
+                <a href="/eliminar/<%= nota.id %>">Eliminar</a>
+            </li>
+        <% }); %>
+    </ul>
+    <form action="/guardar" method="post">
+        <label>Título: <input type="text" name="titulo" required></label><br>
+        <label>Contenido: <textarea name="contenido" required></textarea></label><br>
+        <label>Día: <input type="date" name="dia" required></label><br>
+        <label>Horario: <input type="time" name="horario" required></label><br>
+        <button type="submit">Guardar Nota</button>
+    </form>
+</body>
+</html>

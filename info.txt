@@ -1,0 +1,17 @@
+Crear en mysql workbench el esquema notasdb y dentro de este, la tabla notas.
+
+CREATE DATABASE notasdb;
+
+USE notasdb;
+
+CREATE TABLE notas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    contenido TEXT,
+    dia DATE,
+    horario TIME
+);
+
+Se intalan las instancias express (Para facilitar peticiones, enrutamiento y middleware, escalable) mysql (Base de datos) ejs(Para construir partes repetibles) body-parser (Analizar y procesar datos y solicitudes por express json )
+
+https://chat.openai.com/share/4b9fd357-3365-4d9e-985f-06fa43185364
